@@ -1,12 +1,22 @@
+import { Link } from "react-router-dom"
+
 function Navigation() {
   return (
     <header className="flex bg-white h-16 border-b">
       <div className="flex justify-between items-center w-full mx-6">
-        <h1 className="text-2xl font-medium">AFHS API</h1>
+        <Link to="/">
+          <h1 className="text-2xl font-medium">AFHS API</h1>
+        </Link>
         <ul className="flex gap-4">
-          <li>Docs</li>
-          <li>About</li>
-          <li>GitHub</li>
+          <li>
+            <a href="https://docs.afhsapi.com" target="_blank" rel="noreferrer">GitHub</a>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <a href="https://github.com/Alejandro1709/afhs-api" target="_blank" rel="noreferrer">GitHub</a>
+          </li>
         </ul>
       </div>
     </header>
