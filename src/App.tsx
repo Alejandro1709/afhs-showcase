@@ -1,17 +1,13 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { getCharacters } from "./services/characters"
 import Layout from "./components/Layout";
+import DemoDisplay from "./components/DemoDisplay";
 
 function App() {
-
-  const queryClient = useQueryClient()
-
-  const query = useQuery({ queryKey: ["characters"], queryFn: getCharacters })
-
   return (
     <Layout>
-      {query.isLoading && <p>Loading...</p>}
-      {query?.data && <p>{JSON.stringify(query?.data)}</p>}
+      <header>
+        <h1 className="text-4xl font-bold text-center">React Query Demo</h1>
+      </header>
+      <DemoDisplay />
     </Layout>
   )
 }
