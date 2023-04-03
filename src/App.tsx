@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import DemoDisplay from "./components/DemoDisplay";
 import Navigation from "./components/Navigation";
+import HomePage from "./pages/HomePage";
+import DetailPage from "./pages/DetailPage";
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       <Navigation />
       <main>
         <Routes>
-          <Route path="/" element={<DemoDisplay />} />
-          <Route path="/personajes/:slug" element={<h1>Helloo</h1>} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/personajes/:slug" element={<DetailPage />} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </main>
