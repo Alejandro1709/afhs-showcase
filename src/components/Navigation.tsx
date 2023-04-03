@@ -9,7 +9,7 @@ function Navigation() {
         </Link>
         <ul className="flex gap-4">
           <li>
-            <a href="https://docs.afhsapi.com" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://docs.afhsapi.com" target="_blank" rel="noreferrer">Docs</a>
           </li>
           <li>
             <Link to="/about">About</Link>
