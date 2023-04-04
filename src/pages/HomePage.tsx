@@ -1,8 +1,12 @@
+import ControlBar from "../components/ControlBar"
 import DemoDisplay from "../components/DemoDisplay"
 
 function HomePage() {
   return (
-    <DemoDisplay />
+    <>
+      <ControlBar />
+      <DemoDisplay />
+    </>
   )
 }
 
