@@ -15,8 +15,8 @@ function App() {
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </main>
-      <footer>
-        <p>Footer</p>
+      <footer className="flex justify-center items-center p-4">
+        <p>AFHS API. Todos los datos / imagenes fueron obtenidos de esta <a href='https://alfondohaysitio.fandom.com/es/wiki/AFHS_Wiki' target='_blank' rel="noreferrer">WIKI</a>.</p>
       </footer>
     </Layout>
   )
