@@ -1,17 +1,14 @@
-import { useQuery } from "@tanstack/react-query"
-import { getCharacters } from "../services/characters"
 import Character from "./Character"
+import { useCharacterStore } from "../store"
 import type ICharacter from "../types/character"
 
 function Characters() {
-  //const queryClient = useQueryClient()
-
-  const query = useQuery({ queryKey: ["characters"], queryFn: getCharacters })
+  const characters = useCharacterStore(state => state.characters)
 
   return (
     <>
-      {query.data?.map((character: ICharacter) => (
-        <Character key={character.id} character={character} />
+      {characters.map((character: ICharacter) => (
+        <Character key={character.name} character={character} />
       ))}
     </>
   )
