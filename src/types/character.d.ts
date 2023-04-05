@@ -3,7 +3,7 @@ type STATUS = 'VIVO' | 'MUERTO' | 'LUCHITO' | 'DESCONOCIDO' | 'DESAPARECIDO';
 type GENDER = 'HOMBRE' | 'MUJER';
 
 export default interface ICharacter {
-  id?: string | number;
+  _id?: string | number;
   name: string;
   slug?: string;
   actor: string | string[];
