@@ -12,8 +12,8 @@ function DemoDisplay() {
 
   useEffect(() => {
     if (query.data) {
-      setInitialCharacters(query.data)
       setCharacters(query.data)
+      setInitialCharacters(query.data)
     }
   }, [query])
 

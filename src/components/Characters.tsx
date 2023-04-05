@@ -8,7 +8,7 @@ function Characters() {
   return (
     <>
       {characters.map((character: ICharacter) => (
-        <Character key={character.name} character={character} />
+        <Character key={character._id} character={character} />
       ))}
     </>
   )
