@@ -15,7 +15,7 @@ function DemoDisplay() {
       setInitialCharacters(query.data)
       setCharacters(query.data)
     }
-  }, [query.data, setCharacters])
+  }, [query])
 
   return (
     <section className='flex flex-row justify-center flex-wrap w-full'>
