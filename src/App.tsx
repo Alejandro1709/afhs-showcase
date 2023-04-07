@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import Navigation from "./components/Navigation";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
-import AddPage from "./pages/AddPage";
+// import AddPage from "./pages/AddPage";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/nuevo-personaje" element={<AddPage />} />
+          {/* <Route path="/nuevo-personaje" element={<AddPage />} /> */}
           <Route path="/personajes/:slug" element={<DetailPage />} />
           <Route path="/*" element={<h1>404</h1>} />
         </Routes>
