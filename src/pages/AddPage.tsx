@@ -29,7 +29,7 @@ function AddPage() {
   const { openModal } = useModal()
 
   useEffect(() => {
-    const logged = JSON.parse(localStorage.getItem('user'))
+    const logged = JSON.parse(localStorage.getItem('user') || 'null')
     console.log(logged)
     setUser(logged)
   }, [])
