@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { createCharacter } from "../services/characters";
+import useModal from "../hooks/useModal";
 
 function AddPage() {
   const [formData, setFormData] = useState({
@@ -21,6 +22,8 @@ function AddPage() {
 
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
+
+  const { openModal } = useModal()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -51,7 +54,7 @@ function AddPage() {
           <p className="text-gray-500">Añade un personaje a la API.</p>
           {error && <p className="text-red-500">{error}</p>}
         </div>
-        <button className="bg-blue-400 p-2 rounded-md text-white hover:bg-blue-500">Iniciar Sessión</button>
+        <button className="bg-blue-400 p-2 rounded-md text-white hover:bg-blue-500" onClick={openModal}>Iniciar Sessión</button>
       </header>
       <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-1">
