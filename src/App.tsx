@@ -4,14 +4,10 @@ import Navigation from "./components/Navigation";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import AboutPage from "./pages/AboutPage";
-import Modal from "./components/Modal";
-import useModal from "./hooks/useModal";
 
 function App() {
-  const { isModalOpen } = useModal()
   return (
     <Layout>
-      {isModalOpen ? <Modal /> : null}
       <Navigation />
       <main>
         <Routes>
