@@ -5,11 +5,14 @@ import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import AddPage from "./pages/AddPage";
 import AboutPage from "./pages/AboutPage";
-// import AddPage from "./pages/AddPage";
+import Modal from "./components/Modal";
+import useModal from "./hooks/useModal";
 
 function App() {
+  const { isModalOpen } = useModal()
   return (
     <Layout>
+      {isModalOpen ? <Modal /> : null}
       <Navigation />
       <main>
         <Routes>
