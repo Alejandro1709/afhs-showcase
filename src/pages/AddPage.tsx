@@ -29,7 +29,9 @@ function AddPage() {
   const { openModal } = useModal()
 
   useEffect(() => {
-    const logged = JSON.parse(localStorage.getItem('user') || '{ name: "Guest" email: "", token: ""}')
+    if (typeof localStorage === 'undefined') return
+
+    const logged = JSON.parse(localStorage.getItem('user') || 'null')
     console.log(logged)
     setUser(logged)
   }, [])
