@@ -63,8 +63,8 @@ function AddPage() {
           <p className="text-gray-500">Añade un personaje a la API.</p>
           {error && <p className="text-red-500">{error}</p>}
         </div>
-        {user !== null ? (
-          <div>Bienvenido {user.name}</div>
+        {user?.name !== null ? (
+          <div>Bienvenido {user?.name}</div>
         ) : (
           <button className="bg-blue-400 p-2 rounded-md text-white hover:bg-blue-500" onClick={openModal}>Iniciar Sessión</button>
         )}
