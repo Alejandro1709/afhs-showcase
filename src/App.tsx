@@ -3,7 +3,6 @@ import Layout from "./components/Layout";
 import Navigation from "./components/Navigation";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
-import AddPage from "./pages/AddPage";
 import AboutPage from "./pages/AboutPage";
 import Modal from "./components/Modal";
 import useModal from "./hooks/useModal";
@@ -17,7 +16,6 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/nuevo-personaje" element={<AddPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/personajes/:slug" element={<DetailPage />} />
           <Route path="/*" element={<h1>404</h1>} />
