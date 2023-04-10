@@ -31,7 +31,7 @@ function AddPage() {
   useEffect(() => {
     if (typeof localStorage === 'undefined') return
 
-    const logged = JSON.parse(localStorage.getItem('user') || 'null')
+    const logged: IUser = JSON.parse(localStorage.getItem('user') || 'null')
     console.log(logged)
     setUser(logged)
   }, [])
@@ -65,8 +65,8 @@ function AddPage() {
           <p className="text-gray-500">Añade un personaje a la API.</p>
           {error && <p className="text-red-500">{error}</p>}
         </div>
-        {user?.name !== null ? (
-          <div>Bienvenido {user?.name}</div>
+        {user !== null ? (
+          <div>Bienvenido {user.name}</div>
         ) : (
           <button className="bg-blue-400 p-2 rounded-md text-white hover:bg-blue-500" onClick={openModal}>Iniciar Sessión</button>
         )}
