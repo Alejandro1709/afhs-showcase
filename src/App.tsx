@@ -5,11 +5,12 @@ import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import AddPage from "./pages/AddPage";
 import AboutPage from "./pages/AboutPage";
-// import AddPage from "./pages/AddPage";
+import Modal from "./components/Modal";
 
 function App() {
   return (
     <Layout>
+      <Modal />
       <Navigation />
       <main>
         <Routes>
