@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { createCharacter } from "../services/characters";
 import useModal from "../hooks/useModal";
+import type IUser from "../types/user";
 
 function AddPage() {
   const [formData, setFormData] = useState({
@@ -23,7 +24,14 @@ function AddPage() {
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
+  const [user, setUser] = useState<IUser | null>(null)
+
   const { openModal } = useModal()
+
+  useEffect(() => {
+    const logged = JSON.parse(localStorage.getItem('user') || '[]')
+    setUser(logged)
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -54,7 +62,11 @@ function AddPage() {
           <p className="text-gray-500">Añade un personaje a la API.</p>
           {error && <p className="text-red-500">{error}</p>}
         </div>
-        <button className="bg-blue-400 p-2 rounded-md text-white hover:bg-blue-500" onClick={openModal}>Iniciar Sessión</button>
+        {user !== null ? (
+          <div>Bienvenido {user.name}</div>
+        ) : (
+          <button className="bg-blue-400 p-2 rounded-md text-white hover:bg-blue-500" onClick={openModal}>Iniciar Sessión</button>
+        )}
       </header>
       <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-1">
@@ -63,7 +75,7 @@ function AddPage() {
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="image">Imagen:</label>
-          <input className="p-2 rounded-md border bg-white" type="text" name="image" id="image" value={formData.image} onChange={handleChange} />
+          <input className="p-2 rounded-md border bg-white" type="text" name="image" id="image" value={formData.image} onChange={handleChange} placeholder="https://...." />
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="birthdate">Fecha de Nacimiento:</label>
@@ -80,7 +92,8 @@ function AddPage() {
         <div className="flex flex-col gap-1">
           <label htmlFor="status">*Estado:</label>
           <select className="p-2 rounded-md border bg-white" name="status" id="status" value={formData.status} required onChange={handleChange}>
-            <option value="VIVO">Vivo</option>
+            <option value="" defaultValue="VIVO" hidden={true}>Choose here</option>
+            <option value="VIVO" defaultValue='VIVO'>Vivo</option>
             <option value="MUERTO">Muerto</option>
             <option value="LUCHITO">Luchito</option>
             <option value="DESCONOCIDO">Desconocido</option>
@@ -90,7 +103,8 @@ function AddPage() {
         <div className="flex flex-col gap-1">
           <label htmlFor="gender">*Género:</label>
           <select className="p-2 rounded-md border bg-white" name="gender" id="gender" value={formData.gender} required onChange={handleChange}>
-            <option value="HOMBRE">Hombre</option>
+            <option value="" defaultValue="HOMBRE" hidden={true}>Choose here</option>
+            <option value="HOMBRE" defaultValue='HOMBRE'>Hombre</option>
             <option value="MUJER">Mujer</option>
           </select>
         </div>
