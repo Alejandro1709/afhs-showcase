@@ -12,6 +12,9 @@ function Navigation() {
             <a href="https://docs.afhsapi.com" target="_blank" rel="noreferrer">Docs</a>
           </li>
           <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
             <a href="https://github.com/Alejandro1709/afhs-api" target="_blank" rel="noreferrer">GitHub</a>
           </li>
         </ul>

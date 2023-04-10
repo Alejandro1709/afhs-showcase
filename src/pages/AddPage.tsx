@@ -41,7 +41,7 @@ function AddPage() {
   return (
     <section className="flex flex-col gap-2 md:mx-28 mx-6 mt-6">
       <header className="flex flex-col gap-1">
-        <h1 className="text-3xl font-semibold">Añadir personaje</h1>
+        <h1 className="text-3xl font-semibold">Añadir personaje (Estoy trabajando en esto...)</h1>
         <p className="text-gray-500">Añade un personaje a la API.</p>
       </header>
       <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
@@ -98,7 +98,7 @@ function AddPage() {
           <label htmlFor="actor">Actor:</label>
           <input className="p-2 rounded-md border bg-white" type="text" name="actor" id="actor" placeholder="Separar por coma" value={formData.actor} onChange={handleChange} />
         </div>
-        <button className="p-2 rounded-md bg-blue-500 hover:bg-blue-600 mt-4 text-white font-semibold" type="submit">Añadir</button>
+        <button className="p-2 rounded-md bg-blue-500 disabled:bg-gray-400 cursor-not-allowed hover:bg-blue-600 mt-4 text-white font-semibold" disabled type="submit">Añadir</button>
       </form>
     </section>
   )

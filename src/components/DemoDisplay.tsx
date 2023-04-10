@@ -18,7 +18,7 @@ function DemoDisplay() {
   }, [query])
 
   return (
-    <section className='flex flex-row justify-center flex-wrap w-full'>
+    <section className='flex flex-row justify-center flex-wrap'>
       <Characters />
     </section>
   )
