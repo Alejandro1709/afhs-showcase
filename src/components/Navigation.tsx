@@ -7,9 +7,10 @@ function Navigation() {
         <Link to="/">
           <h1 className="text-2xl font-medium">AFHS API</h1>
         </Link>
-        <ul className="flex gap-4">
+        <ul className="flex gap-4 relative">
           <li>
             <a href="https://docs.afhsapi.com" target="_blank" rel="noreferrer">Docs</a>
+            <span className="bg-red-400/60 text-white p-1 -top-[15px] right-15 rounded-full absolute">Dev</span>
           </li>
           <li>
             <Link to="/about">About</Link>
