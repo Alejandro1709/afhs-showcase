@@ -10,7 +10,9 @@ export const handleLogin = async (email: string, password: string) => {
   });
   const data = await response.json();
 
-  localStorage.setItem("user", JSON.stringify(data));
+  if (response.ok) {
+    localStorage.setItem("user", JSON.stringify(data));
+  }
 
   console.log(data);
 
@@ -27,7 +29,9 @@ export const handleRegister = async (name: string, email: string, password: stri
   });
   const data = await response.json();
 
-  localStorage.setItem("user", JSON.stringify(data));
+  if (response.ok) {
+    localStorage.setItem("user", JSON.stringify(data));
+  }
 
   console.log(data);
 
