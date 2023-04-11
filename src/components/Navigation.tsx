@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import Logo from '../assets/AFHSLOGO.png'
 
 function Navigation() {
   return (
     <header className="flex bg-white h-16 border-b">
       <div className="flex justify-between items-center w-full md:mx-28 mx-6">
-        <Link to="/">
+        <Link className="flex items-center" to="/">
+          <img className='mx-auto w-16' src={Logo} alt="AFHS Logo" draggable={false} />
           <h1 className="text-2xl font-medium">AFHS API</h1>
         </Link>
         <ul className="flex gap-4 relative">
